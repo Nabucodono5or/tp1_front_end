@@ -3,7 +3,7 @@
   function homeController() {
     this.mostrar = true;
     this.btnValor = "ver tabelas por Categorias";
-    
+
     this.trocar = () => {
        this.mostrar = !this.mostrar;
        if(this.mostrar){
@@ -12,6 +12,8 @@
          this.btnValor = "ver tabelas em lista única";
        }
     }
+
+    this.categorias = ['Casa', 'Trabalho', 'Faculdade'];
 
     this.tarefas = [
                       { nome: 'Varrer o quarto', categoria: 'Casa', feito: false },
@@ -29,7 +31,22 @@
                       { nome: 'Fazer TP1', categoria: 'Faculdade', feito: false }
                       ];
                     }
-    homeController.$inject = [];
-    angular.module('tp1').controller('homeController', homeController);
 
+    homeController.$inject = [];
+
+    angular.module('tp1').controller('homeController', homeController)
+    .filter('comparisonCategory', function () {
+
+      return function (items, x) {
+        let filtered = [];
+        for (let i = 0; i < items.length; i++) {
+          if(items[i].categoria == x){
+            filtered.push(items[i]);
+          }
+        }
+
+        return filtered;
+      }
+
+    })
 })();

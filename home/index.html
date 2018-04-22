@@ -26,7 +26,7 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Teste inicio xxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
     <div ng-hide = "$ctrl.mostrar">
-      <table  ng-repeat = "categorias in $ctrl.tarefas | filter : categoria">
+      <table ng-repeat=" categoria in $ctrl.categorias">
         <thead>
           <tr>
             <td>Tarefas Pendentes</td>
@@ -38,7 +38,7 @@
             <td>Categoria</td>
           </tr>
         </thead>
-          <tbody ng-repeat = "tarefa in categorias">
+          <tbody ng-repeat = "tarefa in $ctrl.tarefas | comparisonCategory:categoria ">
             <tr>
               <td> <input type="checkbox" ng-model= "tarefa.feito"> </td>
               <td ng-bind = "tarefa.nome"></td>
