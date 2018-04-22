@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.3/angular.min.js"></script>
+    <script src="../app/tp1.js">
+
+    </script>
+    <script src="home.js"></script>
+  </head>
+
+  <body ng-app="tp1">
+    <header>
+      <ul>
+        <li> <button type="button"> + Categoria </button> </li>
+        <li> <button type="button"> + Tarefa </button> </li>
+        <li> <button type="button"> Ver tarefas por categorias</button> </li>
+      </ul>
+    </header>
+
+    <div ng-controller = "homeController as $ctrl">
+      <table>
+        <thead>
+          <tr>
+            <td>Tarefas Pendentes</td>
+          </tr>
+
+          <tr>
+            <td>Tarefa realizada</td>
+            <td>Tarefa</td>
+            <td>Categoria</td>
+          </tr>
+        </thead>
+          <tbody ng-repeat = "tarefa in $ctrl.tarefas | filter : false">
+            <tr>
+              <td> <input type="checkbox" ng-model= tarefa.feito> </td>
+              <td ng-bind = tarefa.nome></td>
+              <td ng-bind = tarefa.categoria></td>
+            </tr>
+          </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr>
+            <td>Tarefas Concluídas</td>
+          </tr>
+
+          <tr>
+            <td>Tarefa realizada</td>
+            <td>Tarefa</td>
+            <td>Categoria</td>
+          </tr>
+        </thead>
+          <tbody ng-repeat = "tarefa in $ctrl.tarefas | filter : true">
+            <tr>
+              <td> <input type="checkbox" ng-model= tarefa.feito> </td>
+              <td ng-bind = tarefa.nome></td>
+              <td ng-bind = tarefa.categoria></td>
+            </tr>
+          </tbody>
+
+      </table>
+    </div>
+
+  </body>
+</html>
