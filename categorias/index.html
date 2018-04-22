@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.3/angular.min.js"></script>
+    <script src="../app/tp1.js"></script>
+    <script src="categorias.js"></script>
+
+    <title></title>
+  </head>
+  <body ng-app="tp1">
+
+    <div>
+      <input type="text" placeholder="Adicione uma categoria e pressione enter">
+      <button type="button">X</button>
+      <div >
+        <p>Categorias disponíveis</p>
+        <hr>
+        <div >
+          <p>{{ categoria }}</p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
