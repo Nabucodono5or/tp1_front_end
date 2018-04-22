@@ -19,6 +19,43 @@
       </ul>
     </header>
 
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Teste inicio xxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Teste inicio xxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+    <div ng-hide = "$ctrl.mostrar">
+      <table  ng-repeat = "categorias in $ctrl.tarefas | filter : categoria">
+        <thead>
+          <tr>
+            <td>Tarefas Pendentes</td>
+          </tr>
+
+          <tr>
+            <td>Tarefa realizada</td>
+            <td>Tarefa</td>
+            <td>Categoria</td>
+          </tr>
+        </thead>
+          <tbody ng-repeat = "tarefa in categorias">
+            <tr>
+              <td> <input type="checkbox" ng-model= "tarefa.feito"> </td>
+              <td ng-bind = "tarefa.nome"></td>
+              <td ng-bind = "tarefa.categoria"></td>
+            </tr>
+          </tbody>
+      </table>
+
+    </div>
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Teste Final xxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Teste Final xxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+
+
     <div ng-show = "$ctrl.mostrar">
       <table >
         <thead>
