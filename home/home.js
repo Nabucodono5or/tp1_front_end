@@ -1,6 +1,10 @@
 (function() {
 
   function homeController() {
+    this.mostrar = true;
+    this.trocar = () => {
+       this.mostrar = !this.mostrar;
+    }
 
     this.tarefas = [
                       { nome: 'Varrer o quarto', categoria: 'Casa', feito: false },

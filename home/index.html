@@ -10,17 +10,17 @@
     <script src="home.js"></script>
   </head>
 
-  <body ng-app="tp1">
+  <body ng-app="tp1" ng-controller = "homeController as $ctrl">
     <header>
       <ul>
         <li> <button type="button"> + Categoria </button> </li>
         <li> <button type="button"> + Tarefa </button> </li>
-        <li> <button type="button"> Ver tarefas por categorias</button> </li>
+        <li> <button type="button" ng-click = $ctrl.trocar() > Ver tarefas por categorias</button> </li>
       </ul>
     </header>
 
-    <div ng-controller = "homeController as $ctrl">
-      <table>
+    <div ng-show = $ctrl.mostrar>
+      <table >
         <thead>
           <tr>
             <td>Tarefas Pendentes</td>
