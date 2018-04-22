@@ -15,11 +15,11 @@
       <ul>
         <li> <button type="button"> + Categoria </button> </li>
         <li> <button type="button"> + Tarefa </button> </li>
-        <li> <button type="button" ng-click = $ctrl.trocar() > Ver tarefas por categorias</button> </li>
+        <li> <button type="button" ng-bind = "$ctrl.btnValor" ng-click = "$ctrl.trocar()" > </button> </li>
       </ul>
     </header>
 
-    <div ng-show = $ctrl.mostrar>
+    <div ng-show = "$ctrl.mostrar">
       <table >
         <thead>
           <tr>
@@ -34,9 +34,9 @@
         </thead>
           <tbody ng-repeat = "tarefa in $ctrl.tarefas | filter : false">
             <tr>
-              <td> <input type="checkbox" ng-model= tarefa.feito> </td>
-              <td ng-bind = tarefa.nome></td>
-              <td ng-bind = tarefa.categoria></td>
+              <td> <input type="checkbox" ng-model= "tarefa.feito"> </td>
+              <td ng-bind = "tarefa.nome"></td>
+              <td ng-bind = "tarefa.categoria"></td>
             </tr>
           </tbody>
       </table>
@@ -55,9 +55,9 @@
         </thead>
           <tbody ng-repeat = "tarefa in $ctrl.tarefas | filter : true">
             <tr>
-              <td> <input type="checkbox" ng-model= tarefa.feito> </td>
-              <td ng-bind = tarefa.nome></td>
-              <td ng-bind = tarefa.categoria></td>
+              <td> <input type="checkbox" ng-model= "tarefa.feito"> </td>
+              <td ng-bind = "tarefa.nome"></td>
+              <td ng-bind = "tarefa.categoria"></td>
             </tr>
           </tbody>
 

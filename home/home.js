@@ -2,8 +2,15 @@
 
   function homeController() {
     this.mostrar = true;
+    this.btnValor = "ver tabelas por Categorias";
+    
     this.trocar = () => {
        this.mostrar = !this.mostrar;
+       if(this.mostrar){
+         this.btnValor = "ver tabelas por Categorias";
+       }else{
+         this.btnValor = "ver tabelas em lista única";
+       }
     }
 
     this.tarefas = [
