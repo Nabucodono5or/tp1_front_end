@@ -10,15 +10,25 @@
   </head>
   <body ng-app="tp1">
 
-    <div>
-      <input type="text" placeholder="Adicione uma categoria e pressione enter">
+    <div ng-controller="categoriaController as $ctrl">
+      <input type="text" placeholder="Adicione uma categoria e pressione enter" dl-enter-key="$ctrl.myFunction()" ng-model="$ctrl.entrada">
       <button type="button">X</button>
-      <div >
+      <div>
         <p>Categorias disponíveis</p>
         <hr>
-        <div >
+        <div ng-repeat="categoria in $ctrl.categorias">
           <p>{{ categoria }}</p>
+          <hr ng-show="categoria">
         </div>
+
+        <div ng-show="sucesso">
+          <p>Ok! Categoria adicionado com sucesso</p>
+        </div>
+
+        <div ng-show="erro">
+          <p>Erro! Não foi possível adicionar a categoria. MAIS IFO SOBRE ERRO</p>
+        </div>
+
       </div>
     </div>
 
