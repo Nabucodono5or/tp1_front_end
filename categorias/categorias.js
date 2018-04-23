@@ -1,29 +1,20 @@
 (function() {
-  function categoriaController() {
+  function categoriaController(entradaValida) {
     this.categorias = ['Casa', 'Trabalho', 'Faculdade'];
+    this.entrada="";
 
     this.myFunction = () => {
 
-      console.log("sucesso");
+      if(entradaValida.padrao(this.entrada) && entradaValida.repetido(this.entrada, this.categorias)){
+        console.log("erro");
+      } else {
+        console.log("sucesso");
+      }
 
-      /*
-          let e = this.entrada;
-
-          function entradaValida(){
-            for (let i = 0; i < categorias.length; i++) {
-              if(categorias[i] == e){
-                return false;
-              }
-            }
-
-            return true;
-          }
-
-      */
     }
   }
 
-  categoriaController.$inject = [];
+  categoriaController.$inject = ['entradaValida'];
   angular.module('tp1')
     .controller('categoriaController', categoriaController);
 
@@ -49,6 +40,18 @@
       };
     })
     .service('entradaValida', function() {
+      this.repetido = function (valor, array) {
+        for (let i = 0; array.length; i++) {
+          if(array[i] == valor){
+            return false;
+          }
+        }
+        return true;
+      }
+
+      this.padrao = function (valor) {
+        return true;
+      }
 
     });
 
