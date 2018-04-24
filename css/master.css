@@ -1,3 +1,77 @@
+
 .cortado {
   text-decoration: line-through;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul li {
+  float: right;
+  margin: 10px;
+}
+
+header {
+  background-color: #fff;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #1647E9;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #192a56;
+}
+
+main {
+  padding: 50px;
+  background-color: #26de81;
+}
+
+/*
+  paleta de cores
+  #a5b1c2
+  #26de81
+  #192a56
+  #fff
+  #1647E9
+*/
+
+.tabela {
+  background-color: #fff;
+  padding: 2px 0px;
+  padding-bottom: 20px;
+  border: 2px solid #1647E9;
+  border-radius: 10px;
+  width: 900px;
+  margin: 40px auto;
+}
+
+.tabela .titulo {
+  height: 40px;
+  box-sizing: border-box;
+  margin: 0px;
+  font-size: 1.5em;
+  background-color: #1647E9;
+  color: #fff;
+}
+
+.tabela .titulo td {
+  padding-left: 20px;
+}
+
+.tabela thead td{
+  font-weight: bold;
+}
+
+.centralizado {
+  padding-left: 50px;
 }
