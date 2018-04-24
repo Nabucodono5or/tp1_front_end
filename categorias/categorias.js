@@ -5,6 +5,10 @@
     this.sucesso=false;
     this.erro = false;
 
+    this.limpar =  () => {
+      this.entrada = "";
+    }
+
     this.myFunction = () => {
 
       if(!entradaValida.padrao(this.entrada) || entradaValida.repetido(this.entrada, this.categorias)){

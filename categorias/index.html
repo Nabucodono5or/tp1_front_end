@@ -12,7 +12,7 @@
 
     <div ng-controller="categoriaController as $ctrl">
       <input type="text" placeholder="Adicione uma categoria e pressione enter" dl-enter-key="$ctrl.myFunction()" ng-model="$ctrl.entrada">
-      <button type="button">X</button>
+      <button type="button" ng-click="$ctrl.limpar()">X</button>
       <div>
         <p>Categorias disponíveis</p>
         <hr>
