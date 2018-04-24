@@ -7,7 +7,7 @@
 
     this.myFunction = () => {
 
-      if(entradaValida.padrao(this.entrada) && entradaValida.repetido(this.entrada, this.categorias)){
+      if(!entradaValida.padrao(this.entrada) || entradaValida.repetido(this.entrada, this.categorias)){
         console.log("erro");
         this.sucesso = false;
         this.erro = true;
@@ -57,6 +57,9 @@
       }
 
       this.padrao = function (valor) {
+        if(valor.length === 0 || !valor.trim()){
+          return false;
+        }
         return true;
       }
 
