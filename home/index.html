@@ -6,6 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.3/angular.min.js"></script>
     <script src="../app/tp1.js"></script>
     <script src="home.js"></script>
+    <link rel="stylesheet" href="../css/master.css">
   </head>
 
   <body ng-app="tp1" ng-controller = "homeController as $ctrl">
@@ -39,7 +40,7 @@
           <tbody ng-repeat = "tarefa in $ctrl.tarefas | comparisonCategory:categoria ">
             <tr>
               <td> <input type="checkbox" ng-model= "tarefa.feito"> </td>
-              <td ng-bind = "tarefa.nome"></td>
+              <td ng-bind = "tarefa.nome"  ng-class="{cortado : tarefa.feito}"></td>
               <td ng-bind = "tarefa.categoria"></td>
             </tr>
           </tbody>
@@ -70,7 +71,7 @@
           <tbody ng-repeat = "tarefa in $ctrl.tarefas | filter : false">
             <tr>
               <td> <input type="checkbox" ng-model= "tarefa.feito"> </td>
-              <td ng-bind = "tarefa.nome"></td>
+              <td ng-bind = "tarefa.nome" ng-class="{cortado : tarefa.feito}"></td>
               <td ng-bind = "tarefa.categoria"></td>
             </tr>
           </tbody>
@@ -91,7 +92,7 @@
           <tbody ng-repeat = "tarefa in $ctrl.tarefas | filter : true">
             <tr>
               <td> <input type="checkbox" ng-model= "tarefa.feito"> </td>
-              <td ng-bind = "tarefa.nome"></td>
+              <td ng-bind = "tarefa.nome" ng-class="{cortado : tarefa.feito}"></td>
               <td ng-bind = "tarefa.categoria"></td>
             </tr>
           </tbody>
