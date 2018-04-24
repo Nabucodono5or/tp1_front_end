@@ -9,11 +9,12 @@
 
       if(entradaValida.padrao(this.entrada) && entradaValida.repetido(this.entrada, this.categorias)){
         console.log("erro");
-        this.sucesso = true;
-        this.erro = false;
-      } else {
         this.sucesso = false;
         this.erro = true;
+      } else {
+        this.sucesso = true;
+        this.erro = false;
+        this.categorias.push(this.entrada);
         console.log("sucesso");
       }
 
@@ -49,10 +50,10 @@
       this.repetido = function (valor, array) {
         for (let i = 0; i < array.length; i++) {
           if(array[i] === valor){
-            return false;
+            return true;
           }
         }
-        return true;
+        return false;
       }
 
       this.padrao = function (valor) {
