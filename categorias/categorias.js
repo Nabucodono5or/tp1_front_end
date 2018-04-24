@@ -2,12 +2,18 @@
   function categoriaController(entradaValida) {
     this.categorias = ['Casa', 'Trabalho', 'Faculdade'];
     this.entrada="";
+    this.sucesso=false;
+    this.erro = false;
 
     this.myFunction = () => {
 
       if(entradaValida.padrao(this.entrada) && entradaValida.repetido(this.entrada, this.categorias)){
         console.log("erro");
+        this.sucesso = true;
+        this.erro = false;
       } else {
+        this.sucesso = false;
+        this.erro = true;
         console.log("sucesso");
       }
 
@@ -41,8 +47,8 @@
     })
     .service('entradaValida', function() {
       this.repetido = function (valor, array) {
-        for (let i = 0; array.length; i++) {
-          if(array[i] == valor){
+        for (let i = 0; i < array.length; i++) {
+          if(array[i] === valor){
             return false;
           }
         }
