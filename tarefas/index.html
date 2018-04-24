@@ -11,11 +11,11 @@
   <body ng-app="tp1">
 
     <div ng-controller="tarefaController as $ctrl">
-      <input type="text" placeholder="Adicione uma categoria e pressione enter" dl-enter-key="$ctrl.myFunction()" ng-model="$ctrl.entrada">
+      <input type="text" placeholder="Adicione uma categoria e pressione enter" dl-enter-key="$ctrl.condicaoParaMyFunction()" ng-model="$ctrl.entrada">
       <button type="button">X</button>
 
       <!-- xxxxxxxxxxxxxxxxxxxxxx Resolução para esta etapa xxxxxxxxxxxxxxxxxxxxxxx -->
-      <button type="button" ng-click="$ctrl.clickSelecioneCategoria = true"> Selecione uma categoria</button>
+      <button type="button" ng-click="$ctrl.clickSelecioneCategoria = true" > Selecione uma categoria {{ $ctrl.novaCategoria }}</button>
 
       <div ng-show="$ctrl.clickSelecioneCategoria" ng-repeat="categoria in $ctrl.categorias">
         <p ng-click="$ctrl.selecioneCategoria(categoria)">{{ categoria }}</p>
@@ -23,10 +23,10 @@
 
       <!-- xxxxxxxxxxxxxxxxxxxxxx Resolução para esta etapa xxxxxxxxxxxxxxxxxxxxxxx -->
 
-      <div ng-repeat="tarefa in $ctrl.tarefas">
+      <div>
         <p>Lista de tarefas</p>
         <hr>
-        <div >
+        <div ng-repeat="tarefa in $ctrl.tarefas" >
           <p>{{ tarefa.nome }} ({{ tarefa.categoria }})</p>
           <hr ng-show="tarefa">
         </div>
@@ -40,6 +40,7 @@
         </div>
 
       </div>
+
     </div>
 
   </body>

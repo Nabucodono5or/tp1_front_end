@@ -1,6 +1,10 @@
 (function() {
   function tarefaController(entradaValida) {
     this.categorias = ['Casa', 'Trabalho', 'Faculdade'];
+    this.entrada="";
+    this.sucesso=false;
+    this.erro = false;
+    this.novaCategoria = "";
 
     this.tarefas = [{
         nome: 'Varrer o quarto',
@@ -69,31 +73,47 @@
       }
     ];
 
-    this.entrada="";
-    this.sucesso=false;
-    this.erro = false;
 
-    // Deve ser modificado para o contexto
-    // 1. so deve adicionar se passa pelas restrições
-    // 2. so deve ser adicionado se a categoria foi selecionada
-    // Então devemos nos focar no efeito da categoria
-    this.clickSelecioneCategoria = false;
-    this.selecioneCategoria =  (item) => {
-      this.clickSelecioneCategoria = false;
-      console.log(item);
-      //return item;
+    // retorna um objeto tarefa para o array de tarefas ou formata as informações de entrada
+    function criarTarefa(nome, categoria){
+      this.nome = nome;
+      this.ca = categoria;
+
+      return { nome : this.nome, categoria: this.ca,  feito: false};
     }
 
+
+    // trabalha na exibição da div
+    this.clickSelecioneCategoria = false;
+
+    // retorna a categoria retornada
+    this.selecioneCategoria =  (item) => {
+      this.clickSelecioneCategoria = false;
+      this.novaCategoria = item;
+      console.log(item);
+    }
+
+    // função para ação do enter
+    this.condicaoParaMyFunction = () => {
+      if(this.novaCategoria){
+        this.myFunction();
+      }
+    }
+
+    // função executada uma vez que a condição é aceita
     this.myFunction = () => {
 
-      if(!entradaValida.padrao(this.entrada) || entradaValida.repetido(this.entrada, this.categorias)){
+      if(!entradaValida.padrao(this.entrada) || entradaValida.tarefaRepetida(this.entrada, this.tarefas)){
         console.log("erro");
         this.sucesso = false;
         this.erro = true;
       } else {
         this.sucesso = true;
         this.erro = false;
-        this.categorias.push(this.entrada);
+
+        let tempTarefa = criarTarefa(this.entrada, this.novaCategoria);
+        this.tarefas.push(tempTarefa);
+
         console.log("sucesso");
       }
     }

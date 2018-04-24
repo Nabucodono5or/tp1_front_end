@@ -21,6 +21,7 @@
       };
     })
     .service('entradaValida', function() {
+
       this.repetido = function (valor, array) {
         for (let i = 0; i < array.length; i++) {
           if(array[i].toLowerCase() === valor.toLowerCase()){
@@ -40,6 +41,16 @@
       function eNumero(valor) {
         if(parseInt(valor)){
           return true;
+        }
+
+        return false;
+      }
+
+      this.tarefaRepetida = function(valor, array){
+        for (let i = 0; i < array.length; i++) {
+          if(array[i].nome.toLowerCase() === valor.toLowerCase()){
+            return true;
+          }
         }
 
         return false;
