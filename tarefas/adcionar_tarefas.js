@@ -77,6 +77,13 @@
     // 1. so deve adicionar se passa pelas restrições
     // 2. so deve ser adicionado se a categoria foi selecionada
     // Então devemos nos focar no efeito da categoria
+    this.clickSelecioneCategoria = false;
+    this.selecioneCategoria =  (item) => {
+      this.clickSelecioneCategoria = false;
+      console.log(item);
+      //return item;
+    }
+
     this.myFunction = () => {
 
       if(!entradaValida.padrao(this.entrada) || entradaValida.repetido(this.entrada, this.categorias)){
