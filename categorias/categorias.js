@@ -57,10 +57,18 @@
       }
 
       this.padrao = function (valor) {
-        if(valor.length === 0 || !valor.trim()){
+        if(valor.length === 0 || !valor.trim() || eNumero(valor)){
           return false;
         }
         return true;
+      }
+
+      function eNumero(valor) {
+        if(parseInt(valor)){
+          return true;
+        }
+
+        return false;
       }
 
     });
