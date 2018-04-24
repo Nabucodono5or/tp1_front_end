@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.3/angular.min.js"></script>
+    <script src="../app/tp1.js"></script>
+    <script src="adcionar_tarefas.js"></script>
+
+    <title></title>
+  </head>
+  <body ng-app="tp1">
+
+    <div ng-controller="tarefaController as $ctrl">
+      <input type="text" placeholder="Adicione uma categoria e pressione enter" dl-enter-key="$ctrl.myFunction()" ng-model="$ctrl.entrada">
+      <button type="button">X</button>
+      <div ng-repeat="tarefa in $ctrl.tarefas">
+        <p>Lista de tarefas</p>
+        <hr>
+        <div >
+          <p>{{ tarefa.nome }} ({{ tarefa.categoria }})</p>
+          <hr ng-show="tarefa">
+        </div>
+
+        <div ng-show="$ctrl.sucesso">
+          <p>Ok! Categoria adicionado com sucesso</p>
+        </div>
+
+        <div ng-show="$ctrl.erro">
+          <p>Erro! Não foi possível adicionar a categoria. MAIS IFO SOBRE ERRO</p>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
