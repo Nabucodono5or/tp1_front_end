@@ -10,39 +10,45 @@
     <title></title>
   </head>
   <body ng-app="tp1">
+    <main>
+      <div class="principal" ng-controller="tarefaController as $ctrl">
+        <input type="text" placeholder="Adicione uma categoria e pressione enter" dl-enter-key="$ctrl.condicaoParaMyFunction()" ng-model="$ctrl.entrada">
+        <button type="button" ng-click="$ctrl.limpar()" >X</button>
 
-    <div ng-controller="tarefaController as $ctrl">
-      <input type="text" placeholder="Adicione uma categoria e pressione enter" dl-enter-key="$ctrl.condicaoParaMyFunction()" ng-model="$ctrl.entrada">
-      <button type="button" ng-click="$ctrl.limpar()" >X</button>
+        <!-- xxxxxxxxxxxxxxxxxxxxxx Resolução para esta etapa xxxxxxxxxxxxxxxxxxxxxxx -->
 
-      <!-- xxxxxxxxxxxxxxxxxxxxxx Resolução para esta etapa xxxxxxxxxxxxxxxxxxxxxxx -->
-      <button type="button" ng-click="$ctrl.clickSelecioneCategoria = true" > Selecione uma categoria {{ $ctrl.novaCategoria }}</button>
+        <button class="btnSelecione" type="button" ng-click="$ctrl.clickSelecioneCategoria = true" > Selecione uma categoria {{ $ctrl.novaCategoria }}</button>
 
-      <div ng-show="$ctrl.clickSelecioneCategoria" ng-repeat="categoria in $ctrl.categorias">
-        <p ng-click="$ctrl.selecioneCategoria(categoria)">{{ categoria }}</p>
+        <div class="autocompletar" ng-show="$ctrl.clickSelecioneCategoria">
+          <div class="autocompletar-item" ng-repeat="categoria in $ctrl.categorias">
+            <p ng-click="$ctrl.selecioneCategoria(categoria)">{{ categoria }}</p>
+          </div>
+        </div>
+
+
+        <!-- xxxxxxxxxxxxxxxxxxxxxx Resolução para esta etapa xxxxxxxxxxxxxxxxxxxxxxx -->
+
+        <div class="tabelaLista">
+          <p>Lista de tarefas</p>
+
+          <div ng-repeat="tarefa in $ctrl.tarefas" >
+            <hr ng-show="tarefa">
+            <p>{{ tarefa.nome }} ({{ tarefa.categoria }})</p>
+          </div>
+
+          <div class= "tabelaAcerto" ng-show="$ctrl.sucesso">
+            <p>Ok! Categoria adicionado com sucesso</p>
+          </div>
+
+          <div class="tabelaErro" ng-show="$ctrl.erro">
+            <p>Erro! Não foi possível adicionar a categoria. MAIS IFO SOBRE ERRO</p>
+          </div>
+
+        </div>
+
       </div>
 
-      <!-- xxxxxxxxxxxxxxxxxxxxxx Resolução para esta etapa xxxxxxxxxxxxxxxxxxxxxxx -->
-
-      <div>
-        <p>Lista de tarefas</p>
-        <hr>
-        <div ng-repeat="tarefa in $ctrl.tarefas" >
-          <p>{{ tarefa.nome }} ({{ tarefa.categoria }})</p>
-          <hr ng-show="tarefa">
-        </div>
-
-        <div ng-show="$ctrl.sucesso">
-          <p>Ok! Categoria adicionado com sucesso</p>
-        </div>
-
-        <div ng-show="$ctrl.erro">
-          <p>Erro! Não foi possível adicionar a categoria. MAIS IFO SOBRE ERRO</p>
-        </div>
-
-      </div>
-
-    </div>
+    </main>
 
   </body>
 </html>

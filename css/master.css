@@ -45,6 +45,73 @@ main {
   #1647E9
 */
 
+/*
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        CATEGORIA
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+*/
+
+.principal{
+  text-align: center;
+  height: auto;
+  width: 900px;
+  margin: 20px auto;
+}
+
+.principal input[type="text"] {
+  width: 800px;
+}
+
+.principal button {
+  position: relative;
+  vertical-align: middle;
+  background-color: #26de81;
+  font-size: 2.8em;
+  padding: 2px;
+}
+
+hr {
+  border: 1px solid #D4D4D4;
+}
+
+.tabelaLista {
+  text-align: left;
+  border: 2px solid #a5b1c2;
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+}
+
+.tituloEntrada {
+  font-weight: bold;
+}
+.tabelaErro {
+  vertical-align: middle;
+  background-color: #F2B9AA;
+  color: #CC0A07;
+  height: 30px;
+  padding: 10px;
+}
+
+.tabelaAcerto {
+  background-color: #B8FDA4;
+  color: #2A9D09;
+  height: 30px;
+  padding: 10px;
+}
+
+.tabelaErro span {
+  font-weight: bold;
+}
+
+.tabelaAcerto span {
+  font-weight: bold;
+}
+/*
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        HOME
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+*/
 .tabela {
   background-color: #fff;
   padding: 2px 0px;
@@ -74,4 +141,41 @@ main {
 
 .centralizado {
   padding-left: 50px;
+}
+
+/*
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        TAREFAS
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+*/
+
+.autocompletar {
+  position: absolute;
+  border: 1px solid #D4D4D4;
+  background-color: #fff;
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.31);
+  margin-left: 50px;
+  z-index: 99;
+}
+
+.autocompletar-item p {
+  padding: 10px 0;
+  margin: 3px;
+}
+
+.autocompletar-item p:hover {
+  background-color: #D4D4D4;
+}
+
+.principal .btnSelecione {
+  width: 850px;
+  font-size: 1em;
+  padding: 10px;
+  background-color: #1647E9;
+}
+
+.principal .btnSelecione:hover {
+  background-color: #192a56;
 }

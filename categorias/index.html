@@ -10,28 +10,31 @@
     <title></title>
   </head>
   <body ng-app="tp1">
+    <main>
+      <div class="principal" ng-controller="categoriaController as $ctrl">
+        <input type="text" placeholder="Adicione uma categoria e pressione enter" dl-enter-key="$ctrl.myFunction()" ng-model="$ctrl.entrada">
+        <button type="button" ng-click="$ctrl.limpar()">X</button>
+        <div class="tabelaLista">
+          <p class="tituloEntrada">Categorias disponíveis</p>
+          <!-- <hr class="linha_principal"> -->
 
-    <div ng-controller="categoriaController as $ctrl">
-      <input type="text" placeholder="Adicione uma categoria e pressione enter" dl-enter-key="$ctrl.myFunction()" ng-model="$ctrl.entrada">
-      <button type="button" ng-click="$ctrl.limpar()">X</button>
-      <div>
-        <p>Categorias disponíveis</p>
-        <hr>
-        <div ng-repeat="categoria in $ctrl.categorias">
-          <p>{{ categoria }}</p>
-          <hr ng-show="categoria">
+          <div ng-repeat="categoria in $ctrl.categorias">
+            <hr ng-show="categoria">
+            <p>{{ categoria }}</p>
+
+          </div>
+
+          <div class= "tabelaAcerto" ng-show="$ctrl.sucesso">
+            <p> <span>Ok!</span> Categoria adicionado com sucesso</p>
+          </div>
+
+          <div class="tabelaErro" ng-show="$ctrl.erro">
+            <p> <span>Erro!</span> Não foi possível adicionar a categoria. MAIS IFO SOBRE ERRO</p>
+          </div>
+
         </div>
-
-        <div ng-show="$ctrl.sucesso">
-          <p>Ok! Categoria adicionado com sucesso</p>
-        </div>
-
-        <div ng-show="$ctrl.erro">
-          <p>Erro! Não foi possível adicionar a categoria. MAIS IFO SOBRE ERRO</p>
-        </div>
-
       </div>
-    </div>
 
+    </main>
   </body>
 </html>
